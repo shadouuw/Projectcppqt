@@ -3,5 +3,7 @@
         <file>english.qm</file>
         <file>english1.qm</file>
         <file>japonais.qm</file>
+        <file>arabe.qm</file>
+        <file>french.qm</file>
     </qresource>
 </RCC>

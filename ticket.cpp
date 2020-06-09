@@ -17,6 +17,17 @@ Ticket::Ticket()
 
     }
 
+QSqlQueryModel* Ticket ::select()
+{
+
+    QSqlQueryModel* modal=new QSqlQueryModel();
+       QSqlQuery* qry = new QSqlQuery();
+       qry->prepare("select ID from TICKETS");
+       qry->exec();
+       modal->setQuery(*qry);
+
+       return modal;
+}
     Ticket::Ticket( QString id, QString code, QDate date_debut,QDate date_fin)
     {
 
@@ -35,7 +46,7 @@ void Ticket::ajouterticket()
 
   QSqlQuery query;
 
-    query.prepare("INSERT INTO TICKETS (ID,CODE,DATE_DEBUT,DATE_FIN) VALUES (:ID,:CODE,:DATE_DEBUT,:DATE_FIN)");
+    query.prepare("INSERT INTO TICKETS (CODE,DATE_DEBUT,DATE_FIN) VALUES (:CODE,:DATE_DEBUT,:DATE_FIN)");
 
      query.bindValue(":ID",id);
      query.bindValue(":CODE",code);
@@ -65,6 +76,7 @@ void Ticket::qr_code(QString code,QString id)
 QSqlQuery query;
 query.prepare("UPDATE TICKETS SET QR_CODE=:CODE WHERE ID='"+id+"'");
 query.bindValue(":CODE",code);
+query.exec();
 }
 QSqlQueryModel* Ticket::verifier_id(QString id)
 {

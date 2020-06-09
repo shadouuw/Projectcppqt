@@ -22,6 +22,7 @@ Ticket(QString,QString,QDate,QDate);
 void ajouterticket();
 QSqlQueryModel* afficherticket();
 QSqlQueryModel* tri();
+QSqlQueryModel* select();
 QSqlQueryModel* verifier_id(QString id);
 void qr_code(QString code,QString id);
 QSqlQueryModel* recherche(QString id);
