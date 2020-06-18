@@ -36,8 +36,6 @@ public:
     QSqlQueryModel* afficherjoueur();
     QSqlQueryModel* triIdequipe();
     QSqlQueryModel* trinom();
-    QSqlQueryModel* selectstat1();
-    QSqlQueryModel* selectstat2();
     QSqlQueryModel* trilongeur();
     QSqlQueryModel* tripoids();
     QSqlQueryModel* triage();

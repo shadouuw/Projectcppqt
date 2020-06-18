@@ -96,12 +96,48 @@ QSqlQueryModel* equipe :: afficherequipe()
 
 }
 
-QSqlQueryModel* equipe ::tri()
+QSqlQueryModel* equipe ::trinom()
 {
 
     QSqlQuery* qry = new QSqlQuery();
      QSqlQueryModel* modal=new QSqlQueryModel();
     qry->prepare("select *from EQUIPE order by NOM");
+    qry->exec();
+    modal->setQuery(*qry);
+
+  return modal;
+
+}
+QSqlQueryModel* equipe ::triIDequipe()
+{
+
+    QSqlQuery* qry = new QSqlQuery();
+     QSqlQueryModel* modal=new QSqlQueryModel();
+    qry->prepare("select *from EQUIPE order by ID_EQUIPE");
+    qry->exec();
+    modal->setQuery(*qry);
+
+  return modal;
+
+}
+QSqlQueryModel* equipe ::tritournoi()
+{
+
+    QSqlQuery* qry = new QSqlQuery();
+     QSqlQueryModel* modal=new QSqlQueryModel();
+    qry->prepare("select *from EQUIPE order by ID_TOURNOI");
+    qry->exec();
+    modal->setQuery(*qry);
+
+  return modal;
+
+}
+QSqlQueryModel* equipe ::trieven()
+{
+
+    QSqlQuery* qry = new QSqlQuery();
+     QSqlQueryModel* modal=new QSqlQueryModel();
+    qry->prepare("select *from EQUIPE order by ID_EVEN");
     qry->exec();
     modal->setQuery(*qry);
 

@@ -197,31 +197,3 @@ QSqlQueryModel* joueur ::select2()
        return modal;
 
 }
-
-
-QSqlQueryModel* joueur ::selectstat1()
-{
-
-    QSqlQueryModel* modal=new QSqlQueryModel();
-       QSqlQuery* qry = new QSqlQuery();
-       qry->prepare("select * from JOUEUR where age > 30");
-       qry->exec();
-       modal->setQuery(*qry);
-
-       return modal;
-
-}
-
-QSqlQueryModel* joueur ::selectstat2()
-{
-
-    QSqlQueryModel* modal=new QSqlQueryModel();
-       QSqlQuery* qry = new QSqlQuery();
-       qry->prepare("select * from JOUEUR where age < 30");
-       qry->exec();
-       modal->setQuery(*qry);
-
-       return modal;
-
-}
-
